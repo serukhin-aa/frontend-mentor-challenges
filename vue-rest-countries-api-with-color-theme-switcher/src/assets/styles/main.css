@@ -1,0 +1,100 @@
+@import 'primeicons/primeicons.css';
+@import './normalize.css';
+:root {
+  --primary-light: #ffffff;
+  --primary-hover-light: #fcfcfc;
+  --primary-active-light: red;
+  --content-light: #fafafa;
+  --content-border-light: red;
+  --content-hover-light: red;
+  --text-light: #111517;
+  --text-hover-light: #5e5e5e;
+  --text-muted-light: red;
+  --text-hover-muted-light: red;
+
+  --primary-dark: #2b3945;
+  --primary-hover-dark: #fcfcfc;
+  --primary-active-dark: red;
+  --content-dark: #202c37;
+  --content-border-dark: red;
+  --content-hover-dark: #b5b5b5;
+  --text-dark: #ffffff;
+  --text-hover-dark: #b5b5b5;
+  --text-muted-dark: red;
+  --text-hover-muted-dark: red;
+}
+:root {
+  --button-border-radius: 4px;
+  --button-rounded-border-radius: 2rem;
+  --button-sm-padding-x: 0.625rem;
+  --button-sm-padding-y: 0.375rem;
+  --button-padding-x: 0.75rem;
+  --button-padding-y: 0.5rem;
+  --button-lg-padding-x: 0.875rem;
+  --button-lg-padding-y: 0.625rem;
+  --button-gap: 0.3rem;
+  --button-sm-font-size: 0.875rem;
+  --button-lg-font-size: 1.125rem;
+
+  --font-weight-lighter: 300;
+  --font-weight-normal: 600;
+  --font-weight-bold: 800;
+}
+[data-theme='dark'] {
+  --primary-color: var(--primary-dark);
+  --background-color: var(--content-dark);
+  --text-color: var(--text-dark);
+  --text-hover-color: var(--text-hover-dark);
+}
+[data-theme='light'] {
+  --primary-color: var(--primary-light);
+  --background-color: var(--content-light);
+  --text-color: var(--text-light);
+  --text-hover-color: var(--text-hover-light);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary-color: var(--primary-dark);
+    --background-color: var(--content-dark);
+    --text-color: var(--text-dark);
+    --text-hover-color: var(--text-hover-dark);
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-weight: 300;
+  font-style: normal;
+  src: url('../fonts/NunitoSans-Light.ttf');
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-weight: 600;
+  font-style: normal;
+  src: url('../fonts/NunitoSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-weight: 800;
+  font-style: normal;
+  src: url('../fonts/NunitoSans-Bold.ttf');
+}
+body {
+  min-height: 100%;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Nunito Sans', 'Arial', sans-serif;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
