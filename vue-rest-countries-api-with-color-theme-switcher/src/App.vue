@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import Card from 'primevue/card';
+import { RouterView } from 'vue-router';
+import NavbarComponent from '@/components/navigation/navbar-component.vue';
 </script>
 
 <template>
-  <Card>
-    <template #title>Primevue</template>
-    <template #content>
-      <p class="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error
-        repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa
-        ratione quam perferendis esse, cupiditate neque quas!
-      </p>
-    </template>
-  </Card>
+  <NavbarComponent title="Where in the World?" />
+  <main>
+    <RouterView />
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  padding: 15px 100px;
+  height: 100%;
+}
+</style>
