@@ -8,13 +8,11 @@
  */
 import { ref } from 'vue';
 import ButtonComponent from '@/components/containment/button-component.vue';
+import type { TNavbar } from '@/types/components/navbar-type';
 
 // Параметры кнопки:
-defineProps({
-  title: {
-    type: String,
-    default: 'Application'
-  }
+withDefaults(defineProps<TNavbar>(), {
+  title: 'Application'
 });
 
 /**
@@ -51,7 +49,7 @@ function onThemeToggler() {
   </header>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 header {
   display: flex;
   flex-direction: row;
@@ -62,12 +60,16 @@ header {
   box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
   padding: 0 100px;
   width: 100%;
-}
-header > h1 {
-  font-size: 1.5em;
-  font-weight: var(--font-weight-bold);
-}
-header .theme-toggle {
-  font-weight: var(--font-weight-bold);
+
+  > h1 {
+    font-size: 1.5em;
+    font-weight: var(--font-weight-bold);
+    margin-left: 10px;
+  }
+
+  > .theme-toggle {
+    font-weight: var(--font-weight-bold);
+    margin-right: 13px;
+  }
 }
 </style>
