@@ -18,10 +18,12 @@ withDefaults(defineProps<TButton>(), {
  * Действия при нажатии на кнопку.
  * Отправляются внешним компонентом по отношению к текущему компоненту.
  */
-const emit = defineEmits(['click']);
+const emit = defineEmits<{
+  (e: 'button-clicked'): void;
+}>();
 
 const onClickButton = () => {
-  emit('click');
+  emit('button-clicked');
 };
 </script>
 
@@ -59,9 +61,10 @@ const onClickButton = () => {
   font-size: 1rem;
   padding: var(--button-padding-y) var(--button-padding-x);
   font-weight: inherit;
-}
-.button > span.button-icon {
-  font-weight: inherit;
+
+  > .button-icon {
+    font-weight: inherit;
+  }
 }
 .button._sm {
   font-size: var(--button-sm-font-size);

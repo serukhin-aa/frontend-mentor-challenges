@@ -59,7 +59,6 @@ const spinnerDelay3 = computed(() => ({ animationDelay: '0.36s' }));
     opacity: 0.7;
   }
 }
-
 @keyframes stretchDelay {
   0%,
   80% {

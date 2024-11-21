@@ -24,6 +24,7 @@ withDefaults(defineProps<TInput>(), {
 <style scoped lang="css">
 .form-input {
   position: relative;
+
   > .inputicon {
     position: absolute;
     top: 50%;
@@ -32,6 +33,7 @@ withDefaults(defineProps<TInput>(), {
     line-height: 1;
     margin-left: 24px;
   }
+
   > .input-text {
     width: 100%;
     height: 40px;

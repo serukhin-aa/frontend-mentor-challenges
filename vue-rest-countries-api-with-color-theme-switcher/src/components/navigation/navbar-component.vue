@@ -43,7 +43,7 @@ function onThemeToggler() {
         :icon="theme === 'light' ? 'pi-moon' : 'pi-sun'"
         :shadow="false"
         size="sm"
-        @click="onThemeToggler"
+        @button-clicked="onThemeToggler"
       />
     </div>
   </header>
