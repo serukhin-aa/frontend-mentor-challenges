@@ -1,4 +1,6 @@
-<script lang="ts" setup>
+<script setup lang="ts">
+import type { TButton } from '@/types/components/button-type';
+
 /**
  * Компонент: Универсальная кнопка. Может принимать различную форму и внешний вид.
  *
@@ -7,45 +9,21 @@
  */
 
 // Параметры кнопки:
-defineProps({
-  label: {
-    type: String,
-    default: 'Button'
-  },
-  color: {
-    type: String,
-    default: 'primary'
-  },
-  icon: {
-    type: String,
-    required: false
-  },
-  rounded: {
-    type: Boolean,
-    required: false
-  },
-  shadow: {
-    type: Boolean,
-    required: true
-  },
-  size: {
-    type: String,
-    default: 'normal'
-  },
-  disabled: {
-    type: Boolean,
-    required: false
-  }
+withDefaults(defineProps<TButton>(), {
+  label: 'Button',
+  color: 'primary'
 });
 
 /**
  * Действия при нажатии на кнопку.
  * Отправляются внешним компонентом по отношению к текущему компоненту.
  */
-const emit = defineEmits(['click']);
+const emit = defineEmits<{
+  (e: 'button-clicked'): void;
+}>();
 
 const onClickButton = () => {
-  emit('click');
+  emit('button-clicked');
 };
 </script>
 
@@ -83,9 +61,10 @@ const onClickButton = () => {
   font-size: 1rem;
   padding: var(--button-padding-y) var(--button-padding-x);
   font-weight: inherit;
-}
-.button > span.button-icon {
-  font-weight: inherit;
+
+  > .button-icon {
+    font-weight: inherit;
+  }
 }
 .button._sm {
   font-size: var(--button-sm-font-size);
